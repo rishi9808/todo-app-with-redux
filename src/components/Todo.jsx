@@ -14,8 +14,8 @@ const Todo = () => {
         return (
           <div key={todo.id} className="flex justify-center items-center p-3">
             <div className="bg-white px-32  py-2 rounded-lg"
-            onClick={() => navigate(`/todo/${todo.id}`)}>
-              <h2 className=" text-black font-normal rounded-md  text-3xl" >
+            >
+              <h2 className=" text-black font-normal rounded-md  text-3xl" onClick={() => navigate(`/todo/${todo.id}`)}>
                 {todo.data}
               </h2>
               <button
