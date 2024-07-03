@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeTodo, updateTodo } from "../features/todo/todoSlice";
+import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
+    const navigate = useNavigate();
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos);
 
@@ -11,8 +13,9 @@ const Todo = () => {
       {todos.map((todo) => {
         return (
           <div key={todo.id} className="flex justify-center items-center p-3">
-            <div className="bg-white px-32  py-2 rounded-lg">
-              <h2 className=" text-black font-normal rounded-md  text-3xl">
+            <div className="bg-white px-32  py-2 rounded-lg"
+            onClick={() => navigate(`/todo/${todo.id}`)}>
+              <h2 className=" text-black font-normal rounded-md  text-3xl" >
                 {todo.data}
               </h2>
               <button
