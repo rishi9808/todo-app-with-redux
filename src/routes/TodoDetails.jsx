@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const TodoDetails = () => {
   const { id } = useParams();
   const todo = useSelector((state) =>
-    state.todos.find((todo) => todo.id === id)
+    state.todo.todos.find((todo) => todo.id === id)
   );
   return (
     <>

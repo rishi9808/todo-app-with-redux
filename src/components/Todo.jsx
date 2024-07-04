@@ -2,14 +2,28 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeTodo, updateTodo } from "../features/todo/todoSlice";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../features/auth/loginSlice";
 
 const Todo = () => {
     const navigate = useNavigate();
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos);
+  const todos = useSelector((state) => state.todo.todos);
+  
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log(user)
+
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    dispatch(logout());
+    navigate("/");
+  }
 
   return (
-    <div className=" ">
+    <div className="">
+      <p className="absolute top-11 right-[170px] text-2xl ">{user.name}</p>
+      <button className="absolute top-10 right-10 bg-red-500" onClick={handleLogout}>Logout</button>
       {todos.map((todo) => {
         return (
           <div key={todo.id} className="flex justify-center items-center p-3">
