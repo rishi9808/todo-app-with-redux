@@ -57,7 +57,7 @@ const Login = () => {
            className="bg-blue-500 text-white  h-10 rounded-md"
           >Login</button>
 
-          <p className="mt-2">New user? <a href="/register">Register</a></p>
+          <p className="mt-2">New user? <span onClick={() =>navigate("/register")} className="text-blue-500 cursor-pointer  ">Register</span></p>
     
       </form>
     </div>
