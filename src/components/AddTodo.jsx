@@ -14,19 +14,19 @@ const AddTodo = () => {
   };
 
   return (
-    <div>
-      <h1 className="mb-7 p-7 font-mono font-thin ">TODO APP</h1>
-      <form onSubmit={addTodoHandle} className="m-5  pb-24">
-        <div className="flex items-center justify-center">
+    <div className=" container">
+      <h1 className="mb-7 p-7 font-mono font-thin text-4xl md:text-5xl lg:text-6xl">TODO APP</h1>
+      <form onSubmit={addTodoHandle} className="flex justify-center items-center">
+        <div className="grid grid-cols-12   gap-1 md:w-[35rem]">
           <input
-            className=" input-box px-8 py-2 text-black border rounded-md bg-white font-bold"
+            className="text-black border rounded-md bg-white font-bold col-span-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl px-2 py-1"
             type="text"
             name="todo-input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             id=""
           />
-          <button type="submit" className=" bg-purple-500">
+          <button type="submit" className=" bg-purple-500 col-span-4 text-sm sm:text-xl md:text-2xl">
             Add todo
           </button>
         </div>

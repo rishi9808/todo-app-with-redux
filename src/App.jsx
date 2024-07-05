@@ -1,14 +1,16 @@
-import './App.css'
-import AddTodo from './components/AddTodo'
-import Todo from './components/Todo'
+import "./App.css";
+import AddTodo from "./components/AddTodo";
+import Todo from "./components/Todo";
 
 function App() {
   return (
     <>
-      <AddTodo />
-      <Todo />
+      <div className="mt-[100px]">
+        <AddTodo />
+        <Todo />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
